@@ -96,3 +96,20 @@ curl -H "Authorization: Bearer <token>" http://localhost:3000/api/projects
 - Tailwind CSS 3
 - bcryptjs + jsonwebtoken
 - Vitest 2 (testing)
+
+## QA Assessment Recording
+
+> **Recording:** [Watch the QA walkthrough](https://www.loom.com/share/fff1a0f7fa604f018582bb52bfea6988)
+
+The recording covers the full assessment process:
+- **Part 1** — Bug discovery: codebase exploration, live API reproduction with curl, UI walkthrough as viewer, bug prioritization, and BUGS.md authoring.
+- **Part 2** — Test diagnosis: explanation of each test and its failure type before touching code, fix rationale (code-wrong vs test-wrong), targeted fixes, and the new authorization test added.
+
+Key artefacts produced:
+| File | Description |
+|------|-------------|
+| [`BUGS.md`](BUGS.md) | Top 4 bugs prioritized by business impact with curl/UI proof |
+| [`BUGS_BACKLOG.md`](BUGS_BACKLOG.md) | Full 9-bug discovery backlog with repro steps |
+| [`TEST_OUTPUT.md`](TEST_OUTPUT.md) | Part 2 test run before and after fixes with analysis |
+| [`assets/bug04-viewer-edit-modal.png`](assets/bug04-viewer-edit-modal.png) | Live screenshot for BUG-04 UI finding |
+| [`src/tests/part2.test.ts`](src/tests/part2.test.ts) | Updated tests: Test B corrected, Test D added |
