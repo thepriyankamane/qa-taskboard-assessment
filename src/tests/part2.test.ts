@@ -67,7 +67,7 @@ describe("task access control", () => {
       },
       body: JSON.stringify({ title: "viewer create attempt" }),
     });
-    expect(res.status).toBe(401);
+    expect(res.status).toBe(403);
   });
 
   // Test C
@@ -81,5 +81,16 @@ describe("task access control", () => {
       body: JSON.stringify({ title: "member create — baseline" }),
     });
     expect(res.status).toBe(201);
+  });
+
+  // Test D (new) — a viewer cannot delete a task
+  it("a viewer cannot delete a task", async () => {
+    const res = await fetch(`${BASE_URL}/api/tasks/${taskId}`, {
+      method: "DELETE",
+      headers: {
+        Authorization: `Bearer ${tokens.dev}`,
+      },
+    });
+    expect(res.status).toBe(403);
   });
 });
